@@ -24,7 +24,6 @@ Custom User Class
 class Team(AbstractBaseUser):
 
 	name = models.CharField(max_length = 254, unique = True)
-	date_joined = models.DateTimeField(auto_now_add = True)
 	rank = models.IntegerField(null = True, blank = True)
 	is_active = models.BooleanField(default = True)
 	is_admin = models.BooleanField(default = False)
