@@ -31,7 +31,7 @@ class Team(AbstractBaseUser):
 	objects = TeamManager()
 
 	USERNAME_FIELD = 'name'
-
+	
 	def get_full_name(self):
 		return self.name
 
@@ -84,3 +84,6 @@ class Member(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+	def get_admin_url(self):
+		return "/admin/teams/member/%s/" % self.id	
