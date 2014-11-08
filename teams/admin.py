@@ -4,8 +4,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
-from teams.models import Team
-from teams.models import Member
+from teams.models import Team, Member
 
 class MemberInline(admin.TabularInline):
 	model = Member
@@ -27,13 +26,15 @@ class TeamCreationForm(forms.ModelForm):
 
 class TeamChangeForm(forms.ModelForm):
 
-	password = ReadOnlyPasswordHashField()
+	# password = ReadOnlyPasswordHashField()
 
 	class Meta:
 		model = Team
 		fields = ('name', 'password', 'is_active', 'is_admin')
 
 	def clean_password(self):
+		cleaned_data = super(TeamChangeForm, self).clean()
+		password = cleaned_data.get("password")
 		return self.initial["password"]
 
 class TeamAdmin(UserAdmin):
@@ -41,18 +42,18 @@ class TeamAdmin(UserAdmin):
 	form = TeamChangeForm
 	add_form = TeamCreationForm
 
-	# def members(self):
-	# 	html = ""
-	# 	for obj in Member.objects.filter(team=self):
-	# 		html += '<p><a href="%s">%s</a></p>' %(obj.name, obj.name)
-	# 	return html
+	def members(self):
+		members_list = ""
+		for member in Member.objects.filter(team = self):
+			members_list += '<a href="%s">%s (%s-%s)</a>, ' %(member.get_admin_url(), member.name, member.grade, member.section)
+		return members_list[:-2]
 	
-	# members.allow_tags = True
+	members.allow_tags = True
 
-	list_display = ('name', 'rank',)
+	list_display = ('name', 'rank', members)
 	list_filter = ('rank',)
 
-	inlines = [MemberInline,]
+	inlines = [MemberInline, ]
 
 	fieldsets = [
 
