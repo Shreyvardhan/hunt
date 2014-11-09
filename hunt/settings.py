@@ -38,6 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Third Party Apps
+    'rest_framework',
+
     # Custom Apps
     'levels',
     'teams',
@@ -52,6 +55,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGINATE_BY': 10
+}
 
 ROOT_URLCONF = 'hunt.urls'
 

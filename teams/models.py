@@ -76,7 +76,7 @@ class Member(models.Model):
 	)
 
 	name = models.CharField(max_length = 254)
-	team = models.ForeignKey(Team)
+	team = models.ForeignKey(Team, related_name = 'members')
 	email = models.EmailField(null = True, blank = True, max_length = 254)
 	
 	grade = models.IntegerField(max_length = 2, null = True, blank = True, choices = GRADE_CHOICES)
@@ -84,6 +84,6 @@ class Member(models.Model):
 
 	def __unicode__(self):
 		return self.name
-
+		
 	def get_admin_url(self):
 		return "/admin/teams/member/%s/" % self.id	

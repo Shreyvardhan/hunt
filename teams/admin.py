@@ -26,8 +26,6 @@ class TeamCreationForm(forms.ModelForm):
 
 class TeamChangeForm(forms.ModelForm):
 
-	# password = ReadOnlyPasswordHashField()
-
 	class Meta:
 		model = Team
 		fields = ('name', 'password', 'is_active', 'is_admin')
