@@ -8,7 +8,12 @@ https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
 """
 
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hunt.settings")
+import sys
+import site
 
-from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+site.addsitedir('/home/ubuntu/.virtualenvs/hunt/lib/python2.7/site-packages')
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+
+import django.core.handlers.wsgi
+application = django.core.handlers.wsgi.WSGIHandler()

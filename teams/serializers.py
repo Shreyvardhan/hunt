@@ -14,11 +14,14 @@ class MemberSerializer(serializers.HyperlinkedModelSerializer):
 		model = Member
 		fields = ('name', 'grade', 'section', 'team')
 
+members = MemberSerializer(many = True)
 
 class TeamSerializer(serializers.HyperlinkedModelSerializer):
 
-	members = MemberSerializer(many = True, read_only = True)
-
 	class Meta:
 		model = Team
-		fields = ('name', 'rank', 'members', 'password')
+		fields = ('name', 'rank', 'level', 'members', 'password','url', 'cheated')
+		ordering = ('-rank')
+		depth = 1
+		read_only_fields = ('members',)
+		write_only_fields = ('password',)

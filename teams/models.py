@@ -23,8 +23,10 @@ Custom User Class
 """
 class Team(AbstractBaseUser):
 
-	name = models.CharField(max_length = 254, unique = True)
-	rank = models.IntegerField(null = True, blank = True)
+	name = models.CharField(max_length = 254, unique = True, verbose_name = u'Name')
+	rank = models.IntegerField(null = True, blank = True, default = 9001, editable = False, verbose_name = u'Rank')
+	level = models.IntegerField(null = True, blank = True, default = 0, verbose_name = u'Level')
+	cheated = models.BooleanField(default = False, verbose_name = u'Cheaters?')
 	is_active = models.BooleanField(default = True)
 	is_admin = models.BooleanField(default = False)
 	
@@ -84,6 +86,6 @@ class Member(models.Model):
 
 	def __unicode__(self):
 		return self.name
-		
+
 	def get_admin_url(self):
 		return "/admin/teams/member/%s/" % self.id	
