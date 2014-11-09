@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 AUTH_USER_MODEL = 'teams.Team'
 
@@ -118,3 +118,5 @@ TEMPLATE_LOADERS = (
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, 'templates'),
 )
+
+# ALL YOURS NOW
