@@ -11,7 +11,9 @@ import os
 import sys
 import site
 
-site.addsitedir('/home/ubuntu/.virtualenvs/hunt/lib/python2.7/site-packages')
+sys.path.append('/home/ubuntu/hunt')
+sys.path.append('/home/hunt/hunt')
+print >> sys.stderr, sys.path
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'hunt.settings'
 
