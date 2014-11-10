@@ -58,7 +58,7 @@ class TeamRegistrationForm(forms.ModelForm):
 		'password_mismatch': "The two password fields didn't match.",
 	}
 
-	name = forms.CharField(label = "Name", max_length=255)
+	name = forms.CharField(label = "Team Name", max_length=255)
 	
 	password1 = forms.CharField(widget = forms.PasswordInput, label = "Password")
 	password2 = forms.CharField(widget = forms.PasswordInput, label = "Confirm Password")

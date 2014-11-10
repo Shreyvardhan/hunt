@@ -67,3 +67,7 @@ form input, form select, form textarea {
     form input[type="submit"]:focus, form select[type="submit"]:focus, form textarea[type="submit"]:focus {
       background: #69e;
       color: #fff; }
+
+.thanks {
+  width: 80% !important;
+  text-align: center; }
