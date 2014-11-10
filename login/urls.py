@@ -3,8 +3,13 @@ from django.template import RequestContext, loader
 
 from login import views
 
-urlpatterns = patterns('',
+from django.views.generic.edit import CreateView
+from django.contrib.auth.forms import UserCreationForm
 
-	url(r'^$', views.index, name = 'index'),
+urlpatterns = patterns('',
+	
+	# (r'^accounts/', include('registration.backends.default.urls')),
+
+	url(r'^$', views.RegisterView.as_view()),
 
 )

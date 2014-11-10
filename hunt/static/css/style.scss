@@ -1,0 +1,118 @@
+$c: #69e;
+
+body {
+	font-family: "garamond-premier-pro-caption";
+	font-size: 1.1em;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	font-weight: 400;
+	color: #333;
+	position: relative;
+}
+
+p {
+	font-size: 130%;
+	line-height: 1.4;
+}
+
+::selection {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+a {
+	color: $c;
+	text-decoration: none;
+	outline: none;
+
+	&:hover {
+		color: darken($c, 15%);
+	}
+
+	&:focus {
+		background: $c;
+		color: #fff;
+	}
+}
+
+.register {
+	
+	width: 400px;
+	position: relative;
+	top: 50%;
+	margin: 0 auto;
+	transform: translateY(-50%);
+
+	.img {
+
+		text-align: center;
+
+		img {
+
+			height: 80px;
+
+		}
+
+	}
+
+	label {
+
+		text-align: left !important;
+		margin-top: 20px;
+		margin-bottom: -10px;
+		text-transform: lowercase;
+		font-variant: small-caps;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+
+
+
+}
+
+form {
+
+	input, select, textarea {
+		// padding: 10px 20px;
+		border-radius: 5px;
+		font-family: "calluna-sans", sans-serif;
+		// text-transform: uppercase;
+		display: block;
+		width: 100%;
+		border: 2px solid #ccc;
+		outline: none;
+		// margin: 10px auto;
+		margin: 10px 0;
+		padding: 10px;
+
+
+		&:focus {
+			border-color: $c;
+		}
+
+		&[type="submit"] {
+			background: none;
+			border-color: $c;
+			color: $c;
+			font-family: "garamond-premier-pro-caption";
+
+			margin-top: 20px;
+
+			&:hover {
+				border-color: darken($c, 15%);
+				color: darken($c, 15%);
+			}
+
+			&:focus {
+				background: $c;
+				color: #fff;
+			}
+		}
+	}
+
+	textarea {
+		// padding: 20px;
+	}
+
+}

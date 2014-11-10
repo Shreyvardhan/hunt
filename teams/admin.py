@@ -48,8 +48,8 @@ class TeamAdmin(UserAdmin):
 	
 	members.allow_tags = True
 
-	list_display = ('name', 'rank', members)
-	list_filter = ('rank',)
+	list_display = ('name', 'cheated', members)
+	list_filter = ('cheated',)
 
 	inlines = [MemberInline, ]
 
@@ -61,10 +61,11 @@ class TeamAdmin(UserAdmin):
 			'fields': ('name',)
 
 		}),
-		
-		('Rank', {
 
-			'fields': ('rank',)
+		("Misconduct", {
+
+			'classes': ('wide',),
+			'fields': ('cheated',)
 
 		}),
 

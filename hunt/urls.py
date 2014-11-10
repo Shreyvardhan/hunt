@@ -10,6 +10,7 @@ router.register(r'members', views.MemberViewSet)
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', include('login.urls')),
+    url(r'^register/', include('login.urls')),
     url(r'^api/', include(router.urls)),
     url(r'^level/', include('levels.urls')),
     url(r'^admin/', include(admin.site.urls)),

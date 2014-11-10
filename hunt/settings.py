@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
+PROJECT_PATH = os.path.join(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -40,6 +40,7 @@ INSTALLED_APPS = (
 
 	# Third Party Apps
 	'rest_framework',
+	# 'registration',
 
 	# Custom Apps
 	'levels',
@@ -115,8 +116,10 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
+# Find templates in the same folder as settings.py.
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, 'templates'),
+    os.path.join(SETTINGS_PATH, 'templates'),
 )
 
 # ALL YOURS NOW
