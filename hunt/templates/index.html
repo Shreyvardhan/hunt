@@ -14,11 +14,24 @@
 
 	<body>
 		
-		<section class="register thanks">
-			
-			<div class="img"><img src="{{ STATIC_URL }}img/the%20hunt.png" alt=""></div>
+		<section class="register">
 
-			<p style="text-align: center !important">The registration process will be re-initiated at 8:03 p.m.</p>
+			<div class="img"><img src="{{ STATIC_URL }}img/the%20hunt.png" alt=""></div>
+	
+			{% block body %}
+				<section>
+				{% if form.errors %}
+					<p>You can not register this account.</p>
+				{% endif %}
+
+					<form method="post" id="registration_form" action="."> {% csrf_token %}
+						{{ form }}
+						<input type="hidden" name="next" value="/myapp/" />
+						<input type="submit" name="register" value="Save Team" />
+					</form>
+
+				</section>
+			{% endblock %}
 
 		</section>
 
