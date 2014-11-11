@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body_class %}login{% endblock %}
+
+{% block body %}
+	
+
+	<div class="login-card center-everywhere grid-33">
+		
+		<h1 class="pre-header">Welcome to The Hunt.</h1>
+		
+		<h2>Team Login</h2>
+
+
+
+		<form name="LoginForm" action="." method="post"> {% csrf_token %}
+			<!-- {{ form.as_ul }} -->
+			{{ form.non_field_errors }}
+		    {{ form.name.errors }}
+		    {{ form.password.errors }}
+			
+			<div class="field">
+			    {{ form.username }}
+				<i class="ion-ios7-people"></i>
+			</div>
+			<div class="field">
+			    {{ form.password }}
+				<i class="ion-ios7-locked" style="top: -20px;"></i>
+			</div>
+					
+			<input type="submit" value="Login">
+
+		</form>
+
+	</div>
+
+{% endblock %}

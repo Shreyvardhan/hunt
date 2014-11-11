@@ -1,0 +1,30 @@
+body {
+  font-family: "garamond-premier-pro";
+  font-size: 1.1em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  color: #333;
+  position: relative;
+  background: #fcfcfc; }
+
+p {
+  font-size: 130%;
+  line-height: 1.4; }
+
+::selection {
+  background: rgba(0, 0, 0, 0.05); }
+
+a {
+  color: #69e;
+  text-decoration: none;
+  outline: none; }
+  a:hover {
+    color: #216be6; }
+  a:focus {
+    background: #69e;
+    color: #fff; }
+
+nav {
+  padding: 40px 0;
+  margin-bottom: 0; }

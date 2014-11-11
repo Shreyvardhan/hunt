@@ -1,0 +1,19 @@
+@import 'grid/grid';
+
+$total_width: 100%;
+$container_margin: 3.85%;
+$gutter_width: 3.85%;
+$max_width: 960px;
+
+nav {
+
+	@include container();
+
+}
+
+.somesidebar{
+
+	@include column(3);
+	@include push(9);
+
+}

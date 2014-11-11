@@ -1,0 +1,21 @@
+<nav class="grid-container">
+
+	<div class="grid-30 logo"><img src="{{ STATIC_URL }}img/icon.png" alt=""><span class="hidden-mobile">The&nbsp;&nbsp;Hunt</span></div>
+	
+	<div class="pull-right grid-70 menu">
+	
+		<ul>
+		{% if user.is_authenticated %}
+
+        {% else %}        
+
+			<li><a href="#">Register</a></li>
+			<li><a href="#" class="highlight">Login</a></li>
+
+		{% endif %}
+		
+		</ul>
+	
+	</div>
+
+</nav>
