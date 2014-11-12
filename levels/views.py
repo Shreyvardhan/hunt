@@ -21,7 +21,7 @@ def level(request):
 	answer[1] = "daisy"
 	question[0] = "Jobs"
 	answer[3] = "telescope"
-	answer[4] = "1945"
+	answer[4] = "nineteenfortyfive"
 	answer[0] = "steve"
 
 	answer[2] = "frankincense"
