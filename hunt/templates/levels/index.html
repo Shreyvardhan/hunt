@@ -16,7 +16,7 @@
 			<form name="LoginForm" action="." method="post"> {% csrf_token %}
 			
 			<div class="field">
-				<input class="last answer" maxlength="255" name="answer" placeholder="Answer" type="text" value="" />
+				<input class="last answer" maxlength="255" name="answer"autocomplete="off" placeholder="Answer" type="text" value="" />
 				<input type="number" hidden name="level" value={{ level }}>
 			</div>
 
