@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
-from teams.models import Team, Member
+from teams.models import Team, Member, Log
 
 class MemberInline(admin.TabularInline):
 	model = Member
@@ -112,6 +112,16 @@ class MemberAdmin(admin.ModelAdmin):
 	
 	]
 
+
+"""
+Log Admin
+"""
+class LogAdmin(admin.ModelAdmin):
+	list_display = ('__unicode__', 'team', 'level', 'attempt', 'correct', 'time')
+	list_filter = ('time','correct','team')
+	search_fields = ('team','attempt','level')
+
+admin.site.register(Log, LogAdmin)
 admin.site.register(Team, TeamAdmin)
 admin.site.register(Member, MemberAdmin)
 admin.site.unregister(Group)

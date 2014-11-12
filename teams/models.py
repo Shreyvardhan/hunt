@@ -87,3 +87,17 @@ class Member(models.Model):
 
 	def get_admin_url(self):
 		return "/admin/teams/member/%s/" % self.id	
+
+"""
+Log Class
+"""
+class Log(models.Model):
+
+	team = models.ForeignKey(Team, related_name = 'logs', null = True, blank = True)
+	time = models.DateTimeField(auto_now_add = True, null = True, blank = True, verbose_name = u'Time')
+	attempt = models.CharField(max_length = 254, null = True, blank = True)
+	correct = models.BooleanField(default = False, verbose_name = u'Sahi tha ki nahin?')
+	level = models.IntegerField(null = True, blank = True, default = 0, verbose_name = u'Level')
+
+	def __unicode__(self):
+		return self.attempt

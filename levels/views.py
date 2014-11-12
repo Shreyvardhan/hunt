@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.template import RequestContext
-from teams.models import Team, Member 
+from teams.models import Team, Member, Log
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from array import *
@@ -149,14 +149,21 @@ def level(request):
 
 	if request.method == "POST":
 
+
 		if answer[team.level] == request.POST.get("answer", ""):
 			team.level += 1
+			team.last_level_time = datetime.datetime.now()
 			team.save()
+			correct = True
+			log = Log(level = team.level, team = request.user, attempt = request.POST.get("answer", ""), correct = True)
+			log.save(force_insert = True)		
 			return redirect('/level')
 		else:
+			correct = False
+			log = Log(level = team.level, team = request.user, attempt = request.POST.get("answer", ""), correct = False)
+			log.save(force_insert = True)		
 			return render_to_response('levels/index.html', {'question': question[team.level], 'level': team.level, 'incorrect': 'animated wobble' }, context_instance = RequestContext(request))
 			
-
 		# return render_to_response('teams/members.html', {'question': question[team.level], 'level': team.level }, context_instance = RequestContext(request))
 
 
