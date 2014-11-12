@@ -8,11 +8,11 @@
 		{% if user.is_authenticated %}
 
 			<li>Hello, {{ user }}.</a></li>
-			<li><a href="/logout">logout</a></li>
+			<li><a href="/logout"><i class="ion-log-in"></i>logout</a></li>
 
         {% else %}        
 
-			<li><a href="/team/register/">Register</a></li>
+			<!-- <li><a href="/team/register/">Register</a></li> -->
 			<li><a href="/team/login/" class="highlight">Login</a></li>
 
 		{% endif %}

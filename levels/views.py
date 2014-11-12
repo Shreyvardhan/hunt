@@ -103,6 +103,8 @@ def level(request):
 	<p>The name must have been lucky, because the products his company manufactures have taken India by storm. One such appliance has made itself heard in the Indian household far more loudly than others.</p>
 
 	<p>In times of war and guns, a fledgeling Japanese company had experimented along the same lines and failed, but went on to become a multimillion dollar company anyway. Would you be kind enough to tell us the year that saw the launch of this failed product?</p>
+
+	<p>Please answer in words, not digits.</p>
 	"""
 
 	question[5] = """
@@ -123,23 +125,23 @@ def level(request):
 
 	question[6] = """
 
-	He was the son of ruthless parents, whose only desire was vengeance. He wasn’t a large boy, but he had been imbued with deadly power. For a long time now, his parents had held a grudge, and he would be the one to go to war with those against whom the grudge was harboured.
+	<p>He was the son of ruthless parents, whose only desire was vengeance. He wasn’t a large boy, but he had been imbued with deadly power. For a long time now, his parents had held a grudge, and he would be the one to go to war with those against whom the grudge was harboured.</p>
 
-	For years he was trained; his skills perfected. For years he lay dormant until one day, the enemy saw him descend upon them like a flash of lightning. In a matter of minutes, they were mere shadows of their former selves.
+	<p>For years he was trained; his skills perfected. For years he lay dormant until one day, the enemy saw him descend upon them like a flash of lightning. In a matter of minutes, they were mere shadows of their former selves.</p>
 
-	A year later, one among his kin sought to test his abilities within the atolls. Some say his display was lost in the depths. But it wasn’t. 
+	<p>A year later, one among his kin sought to test his abilities within the atolls. Some say his display was lost in the depths. But it wasn’t.</p >
 
-	In fact, we are all too familiar with it. The prickly fruit of his effort houses rather dysfunctional families, whose dark secret hides behind the veil of their ridiculous laughter, their childishness, their daftness and their money-mindedness. 
+	<p>In fact, we are all too familiar with it. The prickly fruit of his effort houses rather dysfunctional families, whose dark secret hides behind the veil of their ridiculous laughter, their childishness, their daftness and their money-mindedness. </p>
 
-	The residents here are not quite what we’d expect. In an environment that doesn’t support their existence, they find remarkable ways to breathe easy. The natives, however, are naturally endowed with something that makes the job a cakewalk.
+	<p>The residents here are not quite what we’d expect. In an environment that doesn’t support their existence, they find remarkable ways to breathe easy. The natives, however, are naturally endowed with something that makes the job a cakewalk.</p>
 
-	There’s a man we know, named coincidentally after this ‘natural endowment’. He is perceptive, and appreciative of the arts. Although not quite a singer, he may be called a drama and music connoisseur. 
+	<p>There’s a man we know, named coincidentally after this ‘natural endowment’. He is perceptive, and appreciative of the arts. Although not quite a singer, he may be called a drama and music connoisseur.</p 
 
-	Just the other day, he put into our heads an infectious song, that plays itself over and over again. Not only does it make for an entertaining listen, but it also holds a wealth of educational content. You know that song?
-	Wonderful!
+	<p>Just the other day, he put into our heads an infectious song, that plays itself over and over again. Not only does it make for an entertaining listen, but it also holds a wealth of educational content. You know that song?</p>
+	<p>Wonderful!</p>
 
-	Why don’t you sing it for us? 
-	And while you’re at it, take a video of yourself in action and share it with us at minet@themis.in!
+	<p>>Why don’t you sing it for us? </p>
+	<p>>And while you’re at it, take a video of yourself in action and share it with us at minet@themis.in!</p>
 	"""
 
 	question[7] = """

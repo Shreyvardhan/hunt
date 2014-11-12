@@ -10,9 +10,10 @@
 		
 		<h1 class="pre-header">Level {{ level }}</h1>
 		
-		<div class="login-card grid-50 push-25 {% if incorrect %}{{incorrect}}{% else %}animated pulse	{% endif %}" id="member-{{ forloop.counter }}">
+		<div class="login-card grid-50 push-25 {% if incorrect %}{{incorrect}}{% else %}animated fadeInIp{% endif %}" id="member-{{ forloop.counter }}">
 			
 			<div class="question">{% autoescape off %}{{ question }}{% endautoescape %}</div>
+			
 			<form name="LoginForm" action="." method="post"> {% csrf_token %}
 			
 			<div class="field">
