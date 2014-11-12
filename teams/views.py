@@ -18,30 +18,30 @@ def hello(request):
 
 def manage_members(request):
 
-	if Member.objects.filter(team = request.user):
-		return redirect('/level')
-	else:	
-		MemberFormSet = modelformset_factory(Member, MemberForm, extra = 3)
-		
-		if request.method == "POST":
-			
-			formset = MemberFormSet(request.POST)
-
-		# if(formset.is_valid()):
-			instances = formset.save(commit = False)
-			for instance in instances:
-				instance.team = request.user
-				if instance.name is None:
-					message = "Damn you."
-				else:
-					message = "Thank you."
-					instance.save()
-				
-			# else:
-				# message = formset.errors
-
-			Team.objects.filter(name = request.user).update(level = 1)
-			return redirect('/level')
+	return redirect('/level')
 	
-		else:
-			return render_to_response('teams/members.html', {'formset': MemberFormSet()}, context_instance = RequestContext(request))
+	# if Member.objects.filter(team = request.user):
+	# else:	
+	# 	MemberFormSet = modelformset_factory(Member, MemberForm, extra = 3)
+		
+	# 	if request.method == "POST":
+			
+	# 		formset = MemberFormSet(request.POST)
+
+	# 	# if(formset.is_valid()):
+	# 		instances = formset.save(commit = False)
+	# 		for instance in instances:
+	# 			instance.team = request.user
+	# 			if instance.name is None:
+	# 				message = "Damn you."
+	# 			else:
+	# 				message = "Thank you."
+	# 				instance.save()
+				
+	# 		# else:
+	# 			# message = formset.errors
+
+	# 		return redirect('/level')
+	
+	# 	else:
+	# 		return render_to_response('teams/members.html', {'formset': MemberFormSet()}, context_instance = RequestContext(request))
