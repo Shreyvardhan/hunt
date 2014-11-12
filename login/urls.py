@@ -8,14 +8,18 @@ from login import views
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 
-def check_login(request):
+def members(request):
     if request.user.is_authenticated():
-        return HttpResponseRedirect('/members')
+        return HttpResponseRedirect('/members/add')
+    else:
+        return HttpResponseRedirect('/team/login/')
 
 urlpatterns = patterns('',
 	
 	# (r'^accounts/', include('registration.backends.default.urls')),
 
-	url(r'^$', check_login),
+	url(r'^login/', views.LoginView.as_view()),
+	url(r'^register/', views.RegisterView.as_view()),
+	url(r'^$', members),
 
 )

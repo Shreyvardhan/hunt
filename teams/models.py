@@ -24,8 +24,8 @@ Custom User Class
 class Team(AbstractBaseUser):
 
 	name = models.CharField(max_length = 254, unique = True, verbose_name = u'Name')
-	rank = models.IntegerField(null = True, blank = True, default = 9001, editable = False, verbose_name = u'Rank')
 	level = models.IntegerField(null = True, blank = True, default = 0, verbose_name = u'Level')
+	last_level_time = models.DateTimeField(auto_now_add = False, null = True, blank = True, verbose_name = u'Time When Last Level Was Cleared')
 	cheated = models.BooleanField(default = False, verbose_name = u'Cheaters?')
 	is_active = models.BooleanField(default = True)
 	is_admin = models.BooleanField(default = False)
@@ -55,34 +55,32 @@ Team Member Class
 """
 class Member(models.Model):
 
-	SECTION_CHOICES = (
+	# SECTION_CHOICES = (
 
-		('A', 'A'), 
-		('B', 'B'), 
-		('C', 'C'), 
-		('D', 'D'), 
-		('E', 'E'),
+	# 	('A', 'A'), 
+	# 	('B', 'B'), 
+	# 	('C', 'C'), 
+	# 	('D', 'D'), 
+	# 	('E', 'E'),
 
-	)
+	# )
 
-	GRADE_CHOICES = (
+	# GRADE_CHOICES = (
 
-		(6, '6'),
-		(7, '7'),
-		(8, '8'),
-		(9, '9'),
-		(10, '10'),
-		(11, '11'),
-		(12, '12'),
+	# 	(8, '8'),
+	# 	(9, '9'),
+	# 	(10, '10'),
+	# 	(11, '11'),
+	# 	(12, '12'),
 
-	)
+	# )
 
-	name = models.CharField(max_length = 254)
-	team = models.ForeignKey(Team, related_name = 'members')
+	name = models.CharField(max_length = 254, null = True, blank = True)
+	team = models.ForeignKey(Team, related_name = 'members', null = True, blank = True)
 	email = models.EmailField(null = True, blank = True, max_length = 254)
 	
-	grade = models.IntegerField(max_length = 2, null = True, blank = True, choices = GRADE_CHOICES)
-	section = models.CharField(max_length = 2,null = True, blank = True, choices = SECTION_CHOICES)
+	grade = models.CharField(max_length = 222, null = True, blank = True)
+	section = models.CharField(max_length = 222,null = True, blank = True)
 
 	def __unicode__(self):
 		return self.name

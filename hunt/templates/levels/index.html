@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Level {{ level }} {% endblock %}
+
+{% block body_class %}level{% endblock %}
+
+{% block body %}
+	
+	<div class="stack level">
+		
+		<h1 class="pre-header">Level {{ level }}</h1>
+		
+		<div class="login-card grid-50 push-25 {% if incorrect %}{{incorrect}}{% else %}animated pulse{% endif %}" id="member-{{ forloop.counter }}">
+			
+			<div class="question">{% autoescape off %}{{ question }}{% endautoescape %}</div>
+			<form name="LoginForm" action="." method="post"> {% csrf_token %}
+			
+			<div class="field">
+				<input class="last answer" maxlength="255" name="answer" placeholder="Answer" type="text" value="" />
+				<input type="number" hidden name="level" value={{ level }}>
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+
+		<div class="grid-50 push-25 two button set">
+			
+			<div class="grid-100" id="add-member-container"><input type="submit" class="full width filled add-member" value="Submit"></div>
+
+		</div>
+			
+		</form>
+
+{% endblock %}

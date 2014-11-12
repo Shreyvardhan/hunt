@@ -9,9 +9,12 @@ class MemberSerializer(serializers.HyperlinkedModelSerializer):
 	grade = serializers.IntegerField()
 	section = serializers.CharField()
 
+	tracks = serializers.RelatedField(many=False, read_only=True)
+
 	class Meta:
 		model = Member
-		fields = ('name', 'grade', 'section')
+		fields = ('name', 'grade', 'section', 'team')
+		readonly = ('team')
 
 members = MemberSerializer(many = True)
 

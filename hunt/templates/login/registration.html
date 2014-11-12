@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body_class %}login{% endblock %}
+
+{% block body %}
+	
+
+	<div class="login-card center-everywhere grid-33">
+		
+		{% if user.is_authenticated %}
+		<h1 class="pre-header">You&rsquo;re already registered.</h1>
+		
+		{% else %} 
+		<h1 class="pre-header">Welcome to The Hunt.</h1>
+		
+		<h2>Team Registration</h2>
+
+		{% load widget_tweaks %}
+
+		<form name="RegistrationsForm" action="." method="post"> {% csrf_token %}
+			{{ form.non_field_errors }}
+		    {{ form.name.errors }}
+		    {{ form.password1.errors }}
+		    {{ form.password2.errors }}
+			
+			<div class="field">
+			    {{ form.name }}
+				<i class="ion-ios7-people"></i>
+			</div>
+			<div class="field">
+			    {{ form.password1 }}
+				<i class="ion-ios7-locked" style="top: -20px;"></i>
+			</div>
+			<div class="field">
+			    {{ form.password2|attr:"class:last" }}
+				<i class="ion-ios7-locked" style="top: -20px;"></i>
+			</div>
+					
+			<input type="submit" value="Press Enter to Register">
+
+		</form>
+
+		{% endif %}
+
+	</div>
+
+{% endblock %}

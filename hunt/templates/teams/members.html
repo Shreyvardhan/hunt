@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Members{% endblock %}
+
+{% block body_class %}login{% endblock %}
+
+{% block body %}
+	
+	
+	{% load widget_tweaks %}
+	<div class="stack">
+		
+		<input type="text" hidden value="1" id="number">
+		<h1 class="pre-header">Add your team members.
+
+		{% if message %} {{message}} {% endif %}
+
+		</h1>
+		<form name="LoginForm" action="." method="post"> {% csrf_token %}
+		{% for dict in formset.errors %}
+			{% for error in dict.values %}
+				{{ error }}
+			{% endfor %}
+		{% endfor %}
+		{{ formset.management_form }}
+		{% for form in formset %}
+		{{form.id}}
+		<div class="login-card grid-50 push-25 {% if forloop.counter > 1 %}hidden{% endif %}" id="member-{{ forloop.counter }}">
+
+			{{ form.non_field_errors }}
+			{{ form.username.errors }}
+			{{ form.password.errors }}
+			
+			<h2>Member {{ forloop.counter }}&rsquo;s Details</h2>
+			
+			<div class="field">
+				{{ form.name|attr:"placeholder:Name" }}
+				<i class="ion-ios7-people"></i>
+			</div>
+
+			<div class="field">
+				{{ form.grade|attr:"placeholder:Class" }}
+				<i class="ion-home" style="top: -20px;"></i>
+			</div>
+
+			<div class="field">
+				{{ form.section|attr:"placeholder:Section" }}
+				<i class="ion-grid"></i>
+			</div>
+
+			<div class="field">
+				{{ form.email|attr:"placeholder:Email"|attr:"class:last" }}
+				<i class="ion-email" style="top: -20px;"></i>
+			</div>
+
+			<div class="field">
+				<input class="last" hidden="" id="id_form-{{ forloop.counter|add:'-1' }}-team" maxlength="255" name="form-{{ forloop.counter|add:'-1' }}-team" placeholder="Team" type="text" value="{{ user }}" />
+			</div>
+
+		</div>
+
+		<div class="clear"></div>
+		
+		{% endfor %}
+
+			<div class="grid-50 push-25 two button set">
+				<div class="grid-75" id="add-member-container"><input type="button" class="full width filled add-member" value="Add a member"></div>
+				<div class="grid-25" id="save-member-container"><input type="submit" class="full width hollow" value="Continue"></div><div class="clear"></div>
+				<p style="margin-top: 50px;text-align: center; font-size: 100%">You won&rsquo;t be allowed to change these details later. Please fill them in carefully.</p>
+				<p style="text-align: center; font-size: 100%">In case of some bullshit, please contact Team MINET at minet@themis.in.</p>
+			</div>
+
+		</form>
+		
+
+	</div>
+
+{% endblock %}

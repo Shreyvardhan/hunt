@@ -4,32 +4,37 @@ from django import forms
 from django.views.generic.edit import FormView
 from forms import TeamRegistrationForm
 from django.contrib.auth import authenticate, login
+from django.template import RequestContext
 from django.contrib.auth.forms import AuthenticationForm
 
 class RegisterView(FormView):
-    template_name = 'login/index.html'
+    template_name = 'login/registration.html'
     form_class = TeamRegistrationForm
-    success_url = 'login/thanks.html'
+    success_url = '/members/add'
 
     def form_valid(self, form):
         form.save()
-        return HttpResponseRedirect('/thanks')
+        # messages.info(request, "Thanks for registering. You are now logged in.")
+        user = authenticate(name = self.request.POST['name'],
+                                      password = self.request.POST['password2'])
+        login(self.request, user)
+        return HttpResponseRedirect('/members/add')
 
 class LoginView(FormView):
     template_name = 'login/index.html'
     form_class = AuthenticationForm
-    success_url = 'index.html'
+    success_url = '/members/add'
 
     def form_valid(self, form):
         user = authenticate(name = self.request.POST['username'],
                                       password = self.request.POST['password'])
         if user is not None:
             login(self.request, user)
-            return HttpResponseRedirect('/members/')
+            return HttpResponseRedirect('/members/add')
         return HttpResponseRedirect('/')
     # else:
         # return HttpResponseRedirect('/members')
 
 def check_login(request):
     if request.user.is_authenticated():
-        return HttpResponseRedirect('/members')
+        return HttpResponseRedirect('/members/add')

@@ -48,8 +48,8 @@ class TeamAdmin(UserAdmin):
 	
 	members.allow_tags = True
 
-	list_display = ('name', 'cheated', members)
-	list_filter = ('cheated',)
+	list_display = ('name', 'cheated', 'level', members)
+	list_filter = ('cheated', 'level')
 
 	inlines = [MemberInline, ]
 
@@ -85,7 +85,7 @@ class TeamAdmin(UserAdmin):
 		),
 	)
 	search_fields = ('name',)
-	ordering = ('rank',)
+	ordering = ('level',)
 	filter_horizontal = ()
 
 """

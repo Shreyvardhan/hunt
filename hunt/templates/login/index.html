@@ -12,25 +12,25 @@
 		<h1 class="pre-header">Welcome to The Hunt.</h1>
 		
 		<h2>Team Login</h2>
-
-
+		
+		{% load widget_tweaks %}
 
 		<form name="LoginForm" action="." method="post"> {% csrf_token %}
 			<!-- {{ form.as_ul }} -->
 			{{ form.non_field_errors }}
-		    {{ form.name.errors }}
+		    {{ form.username.errors }}
 		    {{ form.password.errors }}
 			
 			<div class="field">
-			    {{ form.username }}
+				{{ form.username|attr:"placeholder:Team Name" }}
 				<i class="ion-ios7-people"></i>
 			</div>
 			<div class="field">
-			    {{ form.password }}
+				{{ form.password|attr:"placeholder:Password"|attr:"class:last" }}
 				<i class="ion-ios7-locked" style="top: -20px;"></i>
 			</div>
 					
-			<input type="submit" value="Login">
+			<input type="submit" value="Press Enter to Login">
 
 		</form>
 

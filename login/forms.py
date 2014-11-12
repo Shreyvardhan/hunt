@@ -10,10 +10,11 @@ class TeamRegistrationForm(forms.ModelForm):
 		'password_mismatch': "The two password fields didn't match.",
 	}
 
-	name = forms.CharField(label = "Team Name", max_length=255)
+	name = forms.CharField(widget=forms.TextInput(attrs = {'placeholder':'Team Name'}), label = "Team Name", max_length=255)
 	
-	password1 = forms.CharField(widget = forms.PasswordInput, label = "Team Password")
-	password2 = forms.CharField(widget = forms.PasswordInput, label = "Confirm Team Password")
+	password1 = forms.CharField(widget = forms.PasswordInput(attrs={'placeholder':'Password'}), label = "Team Password")
+
+	password2 = forms.CharField(widget = forms.PasswordInput(attrs={'placeholder':'Confirm Password'}), label = "Confirm Team Password")
 	
 	class Meta:
 		# If you are customizing the User class, always make sure to use 'get_user_model()' instead of 'User'
@@ -47,4 +48,3 @@ class TeamRegistrationForm(forms.ModelForm):
 		if commit:
 			team.save()
 		return team
-

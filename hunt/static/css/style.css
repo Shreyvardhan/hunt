@@ -9,6 +9,10 @@ body {
   position: relative;
   background: #f8f8f8; }
 
+html {
+  position: relative;
+  min-height: 100%; }
+
 p {
   font-size: 130%;
   line-height: 1.4; }
@@ -16,13 +20,13 @@ p {
 ::selection {
   background: rgba(0, 0, 0, 0.05); }
 
-a, .card input[type="submit"], .login-card input[type="submit"] {
+a, .card input[type="submit"], .login-card input[type="submit"], .button.set input {
   color: #69e;
   text-decoration: none;
   outline: none; }
-  a:hover, .card input[type="submit"]:hover, .login-card input[type="submit"]:hover {
+  a:hover, .card input[type="submit"]:hover, .login-card input[type="submit"]:hover, .button.set input:hover {
     color: #216be6; }
-  a:focus, .card input[type="submit"]:focus, .login-card input[type="submit"]:focus {
+  a:focus, .card input[type="submit"]:focus, .login-card input[type="submit"]:focus, .button.set input:focus {
     background: #69e;
     color: #fff; }
 
@@ -60,15 +64,15 @@ nav {
       font-size: 90%;
       margin-left: 40px; }
 
-.highlight, .card input[type="submit"], .login-card input[type="submit"] {
+.highlight, .card input[type="submit"], .login-card input[type="submit"], .button.set input {
   padding: 10px 20px;
   border: 1px solid #69e;
   border-radius: 4px;
   font-family: "calluna-sans";
   text-transform: uppercase; }
-  .highlight:hover, .card input[type="submit"]:hover, .login-card input[type="submit"]:hover {
+  .highlight:hover, .card input[type="submit"]:hover, .login-card input[type="submit"]:hover, .button.set input:hover {
     border: thin solid #216be6; }
-  .highlight:focus, .card input[type="submit"]:focus, .login-card input[type="submit"]:focus {
+  .highlight:focus, .card input[type="submit"]:focus, .login-card input[type="submit"]:focus, .button.set input:focus {
     background: #69e; }
 
 .card, .login-card {
@@ -119,15 +123,17 @@ nav {
     font-size: 80%; }
   .card form, .login-card form {
     margin: 15px 0; }
-    .card form .last, .login-card form .last {
-      border-bottom: 2px solid rgba(0, 0, 0, 0.05); }
-  .card .pre-header, .login-card .pre-header {
-    position: absolute;
-    top: -100px;
-    text-align: center;
-    left: 0;
-    right: 0;
-    bottom: 0; }
+
+.last {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05) !important; }
+
+.pre-header {
+  position: absolute;
+  top: -100px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0; }
 
 .center-everywhere {
   position: absolute;
@@ -152,15 +158,55 @@ h2 {
   font-size: 140%;
   margin-bottom: 0; }
 
-footer {
-  position: fixed;
-  bottom: 15px;
-  text-align: center;
-  font-size: 70%;
-  left: 0;
-  right: 0;
-  font-variant: small-caps;
-  letter-spacing: 0.2em; }
-
 .grid-container.center-everywhere {
   max-width: 90% !important; }
+
+.stack {
+  margin-top: 50px; }
+  .stack .login-card h2 {
+    margin-bottom: 12px; }
+  .stack .card, .stack .login-card {
+    margin: 20px 0;
+    padding-bottom: 0; }
+  .stack .pre-header {
+    position: static;
+    top: -100px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+
+.hidden {
+  display: none; }
+
+.button.set {
+  margin-top: 15px;
+  padding-bottom: 50px !important; }
+  .button.set input {
+    -webkit-appearance: none;
+    background: transparent;
+    outline: none;
+    margin-top: 25px;
+    padding: 10px 10px;
+    width: 100%;
+    margin-bottom: -10px;
+    font-size: 80%; }
+  .button.set .filled {
+    background: #69e;
+    color: white; }
+    .button.set .filled:hover {
+      background: #4f8aeb;
+      color: white; }
+
+.level .answer {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+  margin-top: 50px !important;
+  text-align: center;
+  font-family: "calluna-sans";
+  font-size: 180%; }
+  .level .answer:focus {
+    box-shadow: none !important; }
+
+.incorrect {
+  background: red !important; }

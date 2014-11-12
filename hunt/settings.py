@@ -40,6 +40,7 @@ INSTALLED_APPS = (
 
 	# Third Party Apps
 	'rest_framework',
+	'widget_tweaks',
 	# 'registration',
 
 	# Custom Apps
@@ -67,6 +68,7 @@ ROOT_URLCONF = 'hunt.urls'
 
 WSGI_APPLICATION = 'hunt.wsgi.application'
 
+# APPEND_SLASH = False
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
