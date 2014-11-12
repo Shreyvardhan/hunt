@@ -58,7 +58,7 @@ class TeamAdmin(UserAdmin):
 		("General", {
 
 			'classes': ('wide',),
-			'fields': ('name',)
+			'fields': ('name', 'level')
 
 		}),
 
