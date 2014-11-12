@@ -1,4 +1,5 @@
 body {
+  line-height: 1.67;
   font-family: "garamond-premier-pro";
   font-size: 1.1em;
   text-rendering: optimizeLegibility;
@@ -6,7 +7,11 @@ body {
   font-weight: 400;
   color: #333;
   position: relative;
-  background: #fcfcfc; }
+  background: #f8f8f8; }
+
+html {
+  position: relative;
+  min-height: 100%; }
 
 p {
   font-size: 130%;
@@ -15,16 +20,193 @@ p {
 ::selection {
   background: rgba(0, 0, 0, 0.05); }
 
-a {
+a, .card input[type="submit"], .login-card input[type="submit"], .button.set input {
   color: #69e;
   text-decoration: none;
   outline: none; }
-  a:hover {
+  a:hover, .card input[type="submit"]:hover, .login-card input[type="submit"]:hover, .button.set input:hover {
     color: #216be6; }
-  a:focus {
+  a:focus, .card input[type="submit"]:focus, .login-card input[type="submit"]:focus, .button.set input:focus {
     background: #69e;
     color: #fff; }
 
 nav {
-  padding: 40px 0;
+  padding: 30px 0;
+  margin-bottom: 0;
+  height: 40px;
+  line-height: 40px; }
+
+.logo {
+  font-family: "garamond-premier-pro-caption";
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 0.01em;
+  font-size: 140%; }
+  .logo img {
+    height: 40px;
+    vertical-align: middle;
+    position: relative;
+    top: -4px;
+    margin-right: 10px; }
+
+.menu {
+  font-family: "calluna-sans";
+  text-transform: uppercase;
+  text-align: right; }
+  .menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 3px; }
+    .menu ul li {
+      display: inline-block;
+      font-size: 90%;
+      margin-left: 40px; }
+
+.highlight, .card input[type="submit"], .login-card input[type="submit"], .button.set input {
+  padding: 10px 20px;
+  border: 1px solid #69e;
+  border-radius: 4px;
+  font-family: "calluna-sans";
+  text-transform: uppercase; }
+  .highlight:hover, .card input[type="submit"]:hover, .login-card input[type="submit"]:hover, .button.set input:hover {
+    border: thin solid #216be6; }
+  .highlight:focus, .card input[type="submit"]:focus, .login-card input[type="submit"]:focus, .button.set input:focus {
+    background: #69e; }
+
+.card, .login-card {
+  text-align: left;
+  min-width: 200px;
+  background: white;
+  border: thin solid #eee;
+  padding: 20px 50px;
+  margin: 0;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.07); }
+  .card h2, .login-card h2 {
+    margin: 0; }
+  .card input[type="text"], .login-card input[type="text"], .card input[type="password"], .login-card input[type="password"], .card input[type="email"], .login-card input[type="email"] {
+    width: calc(100% + 100px);
+    position: relative;
+    left: -50px;
+    padding: 12px 50px;
+    outline: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: 2px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: -16px;
+    transition: 0.2s ease; }
+    .card input[type="text"]:focus, .login-card input[type="text"]:focus, .card input[type="password"]:focus, .login-card input[type="password"]:focus, .card input[type="email"]:focus, .login-card input[type="email"]:focus {
+      border-top: 2px solid #69e;
+      box-shadow: 0px 2px 0px #69e; }
+    .card input[type="text"] + i, .login-card input[type="text"] + i, .card input[type="password"] + i, .login-card input[type="password"] + i, .card input[type="email"] + i, .login-card input[type="email"] + i {
+      position: relative;
+      top: -18px;
+      color: rgba(0, 0, 0, 0.5);
+      left: -30px;
+      z-index: 10; }
+    .card input[type="text"]:focus + i, .login-card input[type="text"]:focus + i, .card input[type="password"]:focus + i, .login-card input[type="password"]:focus + i, .card input[type="email"]:focus + i, .login-card input[type="email"]:focus + i {
+      position: relative;
+      top: -18px;
+      color: #69e;
+      left: -30px;
+      z-index: 10; }
+  .card input[type="submit"], .login-card input[type="submit"] {
+    -webkit-appearance: none;
+    background: transparent;
+    outline: none;
+    margin-top: 25px;
+    padding: 10px 10px;
+    width: 100%;
+    margin-bottom: -10px;
+    font-size: 80%; }
+  .card form, .login-card form {
+    margin: 15px 0; }
+
+.last {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05) !important; }
+
+.pre-header {
+  position: absolute;
+  top: -100px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.center-everywhere {
+  position: absolute;
+  top: calc(50% - 100px);
+  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%); }
+
+h1 {
+  font-weight: normal; }
+
+.logo-text {
+  font-family: "garamond-premier-pro-caption";
+  font-variant: small-caps;
+  text-transform: lowercase;
+  text-rendering: optimizeSpeed;
+  font-size: 150%; }
+
+h2 {
+  margin-top: 20px;
+  font-weight: normal;
+  font-size: 140%;
   margin-bottom: 0; }
+
+.grid-container.center-everywhere {
+  max-width: 90% !important; }
+
+.stack {
+  margin-top: 50px; }
+  .stack .login-card h2 {
+    margin-bottom: 12px; }
+  .stack .card, .stack .login-card {
+    margin: 20px 0;
+    padding-bottom: 0; }
+  .stack .pre-header {
+    position: static;
+    top: -100px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+
+.hidden {
+  display: none; }
+
+.button.set {
+  margin-top: 15px;
+  padding-bottom: 50px !important; }
+  .button.set input {
+    -webkit-appearance: none;
+    background: transparent;
+    outline: none;
+    margin-top: 25px;
+    padding: 10px 10px;
+    width: 100%;
+    margin-bottom: -10px;
+    font-size: 80%; }
+  .button.set .filled {
+    background: #69e;
+    color: white; }
+    .button.set .filled:hover {
+      background: #4f8aeb;
+      color: white; }
+
+.level .answer {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+  margin-top: 50px !important;
+  text-align: center;
+  font-family: "calluna-sans";
+  font-size: 180%; }
+  .level .answer:focus {
+    box-shadow: none !important; }
+
+.incorrect {
+  background: red !important; }
