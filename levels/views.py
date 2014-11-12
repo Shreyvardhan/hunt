@@ -21,7 +21,7 @@ def level(request):
 	answer[1] = "daisy"
 	question[0] = "Jobs"
 	answer[3] = "telescope"
-	# answer[4] = "telescope"
+	answer[4] = "1945"
 	answer[0] = "steve"
 
 	answer[2] = "frankincense"
@@ -139,7 +139,7 @@ def level(request):
 	Wonderful!
 
 	Why don’t you sing it for us? 
-	And while you’re at it, take a video of yourself in action and share it with us.
+	And while you’re at it, take a video of yourself in action and share it with us at minet@themis.in!
 	"""
 
 	question[7] = """

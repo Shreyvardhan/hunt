@@ -19,7 +19,7 @@ urlpatterns = patterns('',
 	url(r'^thanks/$', TemplateView.as_view(template_name="thanks.html")),
     url(r'^register/', include('login.urls')),
     # url(r'^api/', include(router.urls)),
-    url(r'^level/', include('levels.urls')),
+    # url(r'^level/', include('levels.urls')),
     url(r'^admin/', include(admin.site.urls)),
     # url(r'^api-auth/', include('rest_framework.urls', namespace = 'rest_framework'))
 
