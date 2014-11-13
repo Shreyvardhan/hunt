@@ -135,13 +135,13 @@ def level(request):
 
 	<p>The residents here are not quite what we’d expect. In an environment that doesn’t support their existence, they find remarkable ways to breathe easy. The natives, however, are naturally endowed with something that makes the job a cakewalk.</p>
 
-	<p>There’s a man we know, named coincidentally after this ‘natural endowment’. He is perceptive, and appreciative of the arts. Although not quite a singer, he may be called a drama and music connoisseur.</p 
+	<p>There’s a man we know, named coincidentally after this ‘natural endowment’. He is perceptive, and appreciative of the arts. Although not quite a singer, he may be called a drama and music connoisseur.</p>
 
 	<p>Just the other day, he put into our heads an infectious song, that plays itself over and over again. Not only does it make for an entertaining listen, but it also holds a wealth of educational content. You know that song?</p>
 	<p>Wonderful!</p>
 
-	<p>>Why don’t you sing it for us? </p>
-	<p>>And while you’re at it, take a video of yourself in action and share it with us at minet@themis.in!</p>
+	<p>Why don’t you sing it for us?</p>
+	<p>And while you’re at it, take a video of yourself in action and share it with us at minet@themis.in!</p>
 	"""
 
 	question[7] = """
@@ -170,4 +170,4 @@ def level(request):
 
 
 	# return HttpResponse(question[1])
-	return render_to_response('levels/index.html', {'question': question[team.level], 'level': team.level }, context_instance = RequestContext(request))
+	return render_to_response('levels/index.html', {'question': question[team.level], 'level': team.level, 'cheated': team.cheated }, context_instance = RequestContext(request))

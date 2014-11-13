@@ -6,18 +6,18 @@
 
 {% block body %}
 	
-	<div class="stack level">
+	<div class="stack level {% if cheated %}cheater-stack{% endif %}">
 		
 		<h1 class="pre-header">Level {{ level }}</h1>
 		
 		<div class="login-card grid-50 push-25 {% if incorrect %}{{incorrect}}{% else %}animated fadeInIp{% endif %}" id="member-{{ forloop.counter }}">
 			
-			<div class="question">{% autoescape off %}{{ question }}{% endautoescape %}</div>
+			<div class="question">{% if cheated %}<h1 class="cheater animated pulse">YOU CHEATED!</h1>{% endif %}{% autoescape off %}{{ question }}{% endautoescape %}</div>
 			
 			<form name="LoginForm" action="." method="post"> {% csrf_token %}
 			
 			<div class="field">
-				<input class="last answer" maxlength="255" name="answer" autocomplete="off" placeholder="Answer" type="text" value="" />
+				<input class="last answer" maxlength="255" name="answer" autocomplete="off" type="text" value="" {% if cheated %}disabled placeholder="CHEATER ALERT! CHEATER ALERT!"{% else %}placeholder="Answer"{% endif %} />
 				<input type="number" hidden name="level" value={{ level }}>
 			</div>
 
@@ -32,5 +32,7 @@
 		</div>
 			
 		</form>
+
+		{% if cheated %}<script src="{{ STATIC_URL }}js/jquery.doge.js"></script><script>$($.doge);</script>{% endif %}
 
 {% endblock %}

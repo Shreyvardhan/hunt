@@ -7,7 +7,7 @@
 		<ul>
 		{% if user.is_authenticated %}
 
-			<li>Hello, {{ user }}.</a></li>
+			<li>Hello, {% if cheated %}Cheater{% else %}{{ user }}{% endif %}.</a></li>
 			<li><a href="/logout"><i class="ion-log-in"></i>logout</a></li>
 
         {% else %}        
