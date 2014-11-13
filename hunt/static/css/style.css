@@ -139,7 +139,7 @@ nav {
 
 .center-everywhere {
   position: absolute;
-  top: calc(50% - 100px);
+  top: calc(50% - 200px);
   margin: 0 auto;
   left: 50%;
   transform: translate(-50%); }
@@ -152,7 +152,8 @@ h1 {
   font-variant: small-caps;
   text-transform: lowercase;
   text-rendering: optimizeSpeed;
-  font-size: 150%; }
+  font-size: 120%;
+  margin: 0 4px; }
 
 h2 {
   margin-top: 20px;

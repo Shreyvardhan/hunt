@@ -1,30 +1,29 @@
-<html>
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body_class %}login{% endblock %}
+
+{% block body %}
 	
-	<head>
+
+	<div class="login-card center-everywhere grid-33">
 		
-		<title>The Hunt &mdash; Registration</title>
+		<h2>Phase 2 of <span class="logo-text">The Hunt</span> is now over.</h2>
 
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
-
-		<script src="//use.typekit.net/eqy7rfq.js"></script>
-		<script>try{Typekit.load();}catch(e){}</script>
-
-	</head>
-
-	<body>
-		
-		<section class="register thanks">
+		<p>Here is the list of the top 5 teams selected for the Final Phase, in order:</p>
+		<p><ol>
 			
-			<div class="img"><img src="{{ STATIC_URL }}img/the%20hunt.png" alt=""></div>
+			<li>________</li>
+			<li>Unorthodox Paradox</li>
+			<li>trigger happy thugs</li>
+			<li>Chandal Chaukdi</li>
+			<li>AAAS/The Group (tie)</li>
 
-			<p>Thanks for registering your team. You&rsquo;ll be asked to add your team members tomorrow, when The Hunt begins.</p>
+		</ol></p>
 
-		</section>
+		<p>Congratulations to all the qualifying teams, and we hope everyone had as much fun as we did!</p>
 
+	</div>
 
-	</body>
-
-
-
-</html>
+{% endblock %}
