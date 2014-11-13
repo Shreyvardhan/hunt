@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 	
     # Examples:
     url(r'^$', include('login.urls')),
-    url(r'^leaderboard/', include('leaderboard.urls')),
+    # url(r'^leaderboard/', include('leaderboard.urls')),
     url(r'^team/', include('login.urls')),
     url(r'^members/', include('teams.urls')),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name='logout'),
