@@ -414,3 +414,62 @@ h2 {
     50% {opacity: 1.0;}
     100% {-webkit-transform: scale(1.4, 1.4); opacity: 0.0;}
 }
+
+.leaderboard {
+
+	span.rank {
+
+		height: 50px;
+		line-height: 50px;
+		width: 50px;
+		padding-left: 2px;
+		text-align: center;
+		display: inline-block;
+		margin-left: -25px;
+		margin-right: 25px;
+
+	}
+	
+	.medal {
+
+		border: 2px solid black !important;
+		// border: 2px solid black;
+		border-radius: 100px;
+
+	}
+	
+	.gold { border: 2px solid gold !important; }
+	.silver { border: 2px solid silver !important; }
+	.bronze { border: 2px solid lighten(brown, 30%) !important; }
+
+	.safe {
+
+		h2::after {
+
+			// position: absolute;
+			display: block;
+			float: right;
+			content: "Qualifiying";
+			right: 0;
+			color: black;
+			z-index: 999;
+			right: 0;
+			font-family: $sans-serif;
+			font-variant: small-caps;
+			text-transform: lowercase;
+			text-rendering: optimizeSpeed;
+			margin-top: 4px;
+			color: #aaa;
+
+		}
+
+		padding-bottom: 6px;
+
+	}
+
+}
+
+.safe {
+
+	border: 2px solid #7ecd94;
+}

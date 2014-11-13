@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Leaderboard{% endblock %}
+
+{% block body_class %}leaderboard{% endblock %}
+
+{% block body %}
+
+	<div class="stack">
+		
+		<h1 class="pre-header">Leaderboard</h1>
+		
+		<div class="grid-50 card push-25">
+			
+			<p style="text-align: center; margin: 0; font-size: 90%; color: #999; font-family: calluna-sans; text-transform: lowercase; font-variant: small-caps;">Random Statistic</p>
+			<h2 style="text-align: center; margin-bottom: 12px">{{ level_2 }} teams are on level 4, {{ level_5 }} teams are on 5, and {{ level_6 }} teams are on the last level of Phase 2, level 6.</h2>
+
+		</div>
+		
+		<div class="clear"></div>
+		
+		{% for team in teams %}
+
+		<div class="login-card grid-50 push-25 {% if forloop.counter <= 5 %}safe{% endif %}" id="member-{{ forloop.counter }}">
+
+			<h2><span class="rank {% if forloop.counter == 1 %}medal gold{% elif forloop.counter == 2%}medal silver{% elif forloop.counter == 3%}medal bronze{% endif %}">{{ forloop.counter }}</span>{{ team.name }}</h2>
+			
+		</div>
+
+		<div class="clear"></div>
+	
+		{% endfor %}
+		
+	</div>
+
+{% endblock %}
