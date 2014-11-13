@@ -7,8 +7,8 @@ from django.template import RequestContext
 def leaderboard(request):
 
 	teams = Team.objects.all()
-	teams = teams.order_by('level'])
-	teams = teams.order_by(['last_level_time'])
+	teams = teams.order_by('level')
+	teams = teams.order_by('last_level_time')
 
 	level_2 = len(Team.objects.filter(level = 2))
 	level_3 = len(Team.objects.filter(level = 3))
