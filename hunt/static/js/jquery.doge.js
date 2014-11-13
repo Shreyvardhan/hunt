@@ -6,7 +6,7 @@
         var doge = $('body').css('font-family', 'Comic Sans MS, Comic Sans, Chalkboard, cursive');
         
         //  much array
-        tings = $.extend(['hunt', 'cheat', 'chor', 'bevkuf', 'sad', 'chhee'], tings);
+        tings = $.extend(['hunt', 'cheat', 'thief', 'buddhu', 'sad', 'chhee'], tings);
         
         var r = function(arr) {
             if(!arr) arr = tings; return arr[Math.floor(Math.random() * arr.length)];
