@@ -19,7 +19,7 @@ urlpatterns = patterns('',
 	# (r'^accounts/', include('registration.backends.default.urls')),
 
 	url(r'^login/', views.LoginView.as_view()),
-	# url(r'^register/', views.RegisterView.as_view()),
+	url(r'^register/', views.RegisterView.as_view()),
 	url(r'^$', members),
 
 )

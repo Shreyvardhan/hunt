@@ -20,11 +20,11 @@ PROJECT_PATH = os.path.join(os.path.dirname(__file__))
 SECRET_KEY = 'ufn6xi32i#)39wo0fx2&=pvbdmg03wm@hs*cugzyjr&5lha45v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost']
 
 AUTH_USER_MODEL = 'teams.Team'
 

@@ -15,7 +15,7 @@
 		{% else %} 
 		<h1 class="pre-header">Welcome to The Hunt.</h1>
 		
-		<h2>Team Registration</h2>
+		<h2>Registration</h2>
 
 		{% load widget_tweaks %}
 
@@ -26,7 +26,7 @@
 		    {{ form.password2.errors }}
 			
 			<div class="field">
-			    {{ form.name }}
+			    {{ form.name|attr:"placeholder:Username" }}
 				<i class="ion-ios7-people"></i>
 			</div>
 			<div class="field">
