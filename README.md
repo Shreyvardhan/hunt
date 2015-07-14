@@ -1,1 +1,1 @@
-Here's to the crazy ones.
+Here's to the gayzy ones.
